@@ -24,17 +24,15 @@ const EventExplorer: React.FC<{ eventItem: EventRootObject | undefined }> = ({
         </p>
         {eventItem?.children?.map((item, index) => {
           return (
-            <>
-              <div
-                style={{
-                  display: isFilesVisible ? 'block' : 'none',
-                  paddingLeft: 15,
-                }}
-                key={index}
-              >
-                <EventExplorer eventItem={item} />
-              </div>
-            </>
+            <div
+              style={{
+                display: isFilesVisible ? 'block' : 'none',
+                paddingLeft: 15,
+              }}
+              key={item.id}
+            >
+              <EventExplorer eventItem={item} />
+            </div>
           );
         })}
       </div>
